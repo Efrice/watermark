@@ -14,12 +14,14 @@ jobs:
     strategy:
       matrix:
         node_version: [18.x]
-        os: [ubuntu-latest, windows-latest]
+        os: ubuntu-latest
       fail-fast: false
 
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
+        with:
+          version: 6.10.0
 
       - name: Set node version to ${{ matrix.node_version }}
         uses: actions/setup-node@v3

@@ -4,7 +4,7 @@
   "description": "Add watermark to image",
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build --outDir docs"
   },
   "repository": {
     "type": "git",

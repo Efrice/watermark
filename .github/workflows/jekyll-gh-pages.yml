@@ -5,7 +5,8 @@ on:
     branches:
       - main
 
-build:
+jobs:
+  build:
     runs-on: ${{ matrix.os }}
 
     timeout-minutes: 10

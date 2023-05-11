@@ -28,5 +28,5 @@
       "@vue-macros/volar/define-slots"
     ]
   },
-  "exclude": ["dist", "node_modules"]
+  "exclude": ["docs", "node_modules"]
 }

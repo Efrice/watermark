@@ -7,14 +7,13 @@ on:
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
 
     timeout-minutes: 10
 
     strategy:
       matrix:
         node_version: [18.x]
-        os: ubuntu-latest
       fail-fast: false
 
     steps:

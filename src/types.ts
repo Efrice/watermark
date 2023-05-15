@@ -3,7 +3,7 @@ export interface Config {
   height: string
   font: string
   color: string
-  degree: string
+  rotate: string
   row: string
   col: string
   startX: string

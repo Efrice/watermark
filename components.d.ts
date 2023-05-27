@@ -13,5 +13,6 @@ declare module '@vue/runtime-core' {
     TheFooter: typeof import('./src/components/TheFooter.vue')['default']
     TheInput: typeof import('./src/components/TheInput.vue')['default']
     TheMain: typeof import('./src/components/TheMain.vue')['default']
+    TheSwitch: typeof import('./src/components/TheSwitch.vue')['default']
   }
 }

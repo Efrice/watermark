@@ -1,23 +1,25 @@
 <script setup lang="ts">
-import type { Config, ConfigKey } from '~/types'
+import type { ConfigKey } from '~/types'
+import { WATERMWRK_KEY, defaultConfig } from '~/const'
 
-const config = reactive<Config>({
-  word: '仅用于工作认证',
-  width: '0',
-  height: '0',
-  font: '16',
-  color: 'rgba(0, 0, 0, 0.2)',
-  rotate: '-15',
-  row: '7',
-  col: '7',
-  startX: '-100',
-  startY: '0',
-  offsetX: '48',
-  offsetY: '48',
-})
+const storageConfig = localStorage.getItem(WATERMWRK_KEY)
+const userConfig = storageConfig && JSON.parse(storageConfig)
 
-function update(key: ConfigKey, val: string){
-  config[key] = val
+const config = reactive(userConfig || defaultConfig)
+
+const stringKeys = ['words', 'color', 'rotate', 'startX', 'startY']
+function update(key: ConfigKey, val: string | number | boolean){
+  if(key === 'saveConfig') 
+    config[key] = Boolean(val)
+  else if(stringKeys.includes(key)) 
+    config[key] = val
+  else 
+    config[key] = +val
+
+  if(key === 'saveConfig' && val === false) 
+    localStorage.setItem(WATERMWRK_KEY, '')
+  else 
+    config['saveConfig'] && localStorage.setItem(WATERMWRK_KEY, JSON.stringify(config))
 }
 </script>
 

@@ -9,3 +9,39 @@ body,
 html.dark {
   background: #121212;
 }
+
+@keyframes spin {
+  from  {
+    transform: rotate(0deg);
+  }
+  
+  to  {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  animation: spin 5s linear 0s infinite alternate;
+  -webkit-animation: spin 5s linear 0s infinite alternate;
+}
+
+.range {
+  background-size: 98% 3px;
+  width: 100%;
+  background: linear-gradient(to right, rgba(15, 118, 110, 1), rgba(15, 118, 110, .1));
+  outline: none;
+  -webkit-appearance: none; 
+  height: 5px; 
+  border-radius: 10px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  -webkit-appearance: none;
+  border: 0;
+}

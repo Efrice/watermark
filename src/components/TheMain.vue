@@ -14,7 +14,7 @@ function configChange() {
   if(img)
     preview.value.src = generateCanvas(config, img, loadInit ).src
   if(pdfUrl.value)
-    loadPdf(pdfUrl.value, config , wrap, loading, loadInit)
+    loadPdf(pdfUrl.value, config, wrap, loading, loadInit)
 }
 
 let loadInit = false
@@ -47,7 +47,7 @@ function reLoad(){
 let img: HTMLImageElement | null
 const canvas = ref()
 const preview = ref()
-const url = ref()
+const url = ref('')
 function resolveImage(file: Blob){
   const reader = new FileReader()
   reader.readAsDataURL(file)
@@ -66,7 +66,7 @@ function resolveImage(file: Blob){
   }
 }
 
-const pdfUrl = ref()
+const pdfUrl = ref('')
 const loading = ref(false)
 const wrap = ref() as Ref<HTMLElement>
 function resolvePDF(file: Blob){

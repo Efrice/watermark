@@ -1,6 +1,6 @@
 # Watermark
 
-Add watermark to image/pdf.
+Add watermark to image/pdf, or compression.
 
 # Features
 
@@ -29,4 +29,3 @@ Add watermark to image/pdf.
 | offsetX     | the offset along the X axis between two watermarks.          |
 | offsetY     | the offset along the Y axis between two watermarks.          |
 | compression | the level for compression.                                   |
-|             |                                                              |

@@ -7,6 +7,7 @@ const userConfig = storageConfig && JSON.parse(storageConfig)
 
 const config = reactive<Config>(formatUserConfig(userConfig) || defaultConfig)
 function formatUserConfig(config: Config){
+  if(!config) return
   const { rotate, startX, startY } = config
   return {
     ...config,

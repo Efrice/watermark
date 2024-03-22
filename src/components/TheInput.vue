@@ -42,7 +42,20 @@ const { value } = defineModels<{
         step="0.1"/>
       <p py-2>{{ value }} </p>
     </div>
-    <div v-else>
+    <div v-else-if="typeof value === 'number'" >
+      <input
+        :id="property"
+        v-model="value"
+        type="number"
+        p="x-0 y-1"
+        w-58
+        text="center"
+        bg="transparent"
+        border="~ rounded gray-200 dark:gray-700"
+        outline="none active:none"
+      >
+    </div>
+    <div v-else >
       <input
         :id="property"
         v-model="value"

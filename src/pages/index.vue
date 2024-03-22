@@ -1,11 +1,20 @@
 <script setup lang="ts">
-import type { ConfigKey } from '~/types'
+import type { ConfigKey, Config } from '~/types'
 import { WATERMWRK_KEY, defaultConfig } from '~/const'
 
 const storageConfig = localStorage.getItem(WATERMWRK_KEY)
 const userConfig = storageConfig && JSON.parse(storageConfig)
 
-const config = reactive(userConfig || defaultConfig)
+const config = reactive<Config>(formatUserConfig(userConfig) || defaultConfig)
+function formatUserConfig(config: Config){
+  const { rotate, startX, startY } = config
+  return {
+    ...config,
+    rotate: Number(rotate),
+    startX: Number(startX),
+    startY: Number(startY),
+  }
+}
 
 const stringKeys = ['words', 'color', 'rotate', 'startX', 'startY']
 function update(key: ConfigKey, val: string | number | boolean){

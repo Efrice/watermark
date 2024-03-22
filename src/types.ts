@@ -4,11 +4,11 @@ export interface Config {
   height: number
   fontSize: number
   color: string
-  rotate: string
+  rotate: number
   row: number
   col: number
-  startX: string
-  startY: string
+  startX: number
+  startY: number
   offsetX: number
   offsetY: number
   compression: number
